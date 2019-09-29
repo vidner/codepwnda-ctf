@@ -7,12 +7,12 @@ sebuah upaya agar per-ctf-an di indonesia kembali ke jalan yang benar
 ## Distribusi poin
 Static scoring
 
-Level      | Score |
------------|-------|
-easy       |  50   |
-medium     |  100  |
-hard       |  200  | 
-guess god  | `inf` |
+Level      | Score     |
+-----------|-----------|
+easy       |    1-50   |
+medium     |   51-100  |
+hard       |  101-200  | 
+guess god  |   `inf`   |
 
 ## Deploy
 
