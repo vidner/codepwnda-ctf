@@ -31,7 +31,7 @@ challenge name         | category | level | dockerized | port |
 │   │   ├── [solve, solusi, ...].{c, py, cc, ...}
 │   │   ├── flag.txt
 │   │   ├── Makefile
-│   │   └── README.md
+│   └── README.md
 .   .
 ```
 
