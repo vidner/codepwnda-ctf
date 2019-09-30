@@ -20,6 +20,7 @@ ADD config/run_challenge.sh /home/ctf/run_challenge.sh
 # Challenge files
 ADD challenge/flag /flag
 ADD challenge/qjs /home/ctf/qjs
+ADD server.py /home/ctf/server.py
 
 # Set some proper permissions
 RUN chown -R root:ctf /home/ctf /flag
