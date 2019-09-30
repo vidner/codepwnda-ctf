@@ -1,2 +1,2 @@
 #! /bin/bash
-cd /home/ctf && ./qjs --nostd
+cd /home/ctf && python -u server.py

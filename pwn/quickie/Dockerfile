@@ -6,7 +6,7 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update --fix-missing && apt-get -y upgrade
 
 # System deps
-RUN apt-get install -y lib32z1 libseccomp-dev xinetd
+RUN apt-get install -y lib32z1 libseccomp-dev xinetd python
 
 # Create ctf-user
 RUN groupadd -r ctf && useradd -r -g ctf ctf
