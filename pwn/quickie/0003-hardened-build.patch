@@ -1,0 +1,18 @@
+diff --git Makefile Makefile
+index 7ca93f0..f25d752 100644
+--- Makefile
++++ Makefile
+@@ -94,11 +94,13 @@ CFLAGS+=-Werror
+ endif
+ DEFINES:=-D_GNU_SOURCE -DCONFIG_VERSION=\"$(shell cat VERSION)\"
+ CFLAGS+=$(DEFINES)
++CFLAGS+=-fPIE
+ CFLAGS_DEBUG=$(CFLAGS) -O0
+ CFLAGS_SMALL=$(CFLAGS) -Os
+ CFLAGS_OPT=$(CFLAGS) -O2
+ CFLAGS_NOLTO:=$(CFLAGS_OPT)
+ LDFLAGS=-g
++LDFLAGS+=-pie -Wl,-z,relro,-z,now -fstack-protector-strong
+ ifdef CONFIG_LTO
+ CFLAGS_SMALL+=-flto
+ CFLAGS_OPT+=-flto
