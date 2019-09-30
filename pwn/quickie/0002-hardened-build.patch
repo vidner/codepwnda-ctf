@@ -1,8 +1,8 @@
-diff --git Makefile Makefile
-index 7ca93f0..f25d752 100644
---- Makefile
-+++ Makefile
-@@ -94,11 +94,13 @@ CFLAGS+=-Werror
+diff --git a/Makefile b/Makefile
+index 377043c..17dd03b 100644
+--- a/Makefile
++++ b/Makefile
+@@ -95,11 +95,13 @@ CFLAGS+=-Werror
  endif
  DEFINES:=-D_GNU_SOURCE -DCONFIG_VERSION=\"$(shell cat VERSION)\"
  CFLAGS+=$(DEFINES)

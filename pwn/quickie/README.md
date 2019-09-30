@@ -3,9 +3,8 @@ Oo~~b~~f. no fast != no furious. Can you pwn this as fast as possible?
 
 ```
 ├── 0001-QuickJS-enable-OOB.patch
-├── 0002-debug-helper.patch
-├── 0003-hardened-build.patch
-├── quickjs-2019-07-09.tar.xz
+├── 0002-hardened-build.patch
+├── quickjs-2019-09-18.tar.xz
 ├── challenge
 │   ├── flag
 │   └── qjs
@@ -14,8 +13,8 @@ Oo~~b~~f. no fast != no furious. Can you pwn this as fast as possible?
 
 ## build instruction
 ```sh
-tar xvf quickjs-2019-07-09.tar.xz
-cd quickjs-2019-07-09
+tar xvf quickjs-2019-09-18.tar.xz
+cd quickjs-2019-09-18
 patch < ../0001-QuickJS-enable-OOB.patch
 patch < ../0002-debug-helper.patch
 patch < ../0003-hardened-build.patch

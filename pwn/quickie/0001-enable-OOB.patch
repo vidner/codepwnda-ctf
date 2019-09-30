@@ -1,8 +1,8 @@
-diff --git quickjs.c quickjs.c
-index 9606455..c81b450 100644
---- quickjs.c
-+++ quickjs.c
-@@ -47166,16 +47166,15 @@ static JSValue js_dataview_getValue(JSContext *ctx,
+diff --git a/quickjs.c b/quickjs.c
+index 5d833b0..5e776da 100644
+--- a/quickjs.c
++++ b/quickjs.c
+@@ -49462,16 +49462,15 @@ static JSValue js_dataview_getValue(JSContext *ctx,
  {
      JSTypedArray *ta;
      JSArrayBuffer *abuf;
@@ -22,7 +22,7 @@ index 9606455..c81b450 100644
          return JS_EXCEPTION;
      is_swap = FALSE;
      if (argc > 1)
-@@ -47186,8 +47185,6 @@ static JSValue js_dataview_getValue(JSContext *ctx,
+@@ -49482,8 +49481,6 @@ static JSValue js_dataview_getValue(JSContext *ctx,
      abuf = ta->buffer->u.array_buffer;
      if (abuf->detached)
          return JS_ThrowTypeErrorDetachedArrayBuffer(ctx);
@@ -31,7 +31,7 @@ index 9606455..c81b450 100644
      ptr = abuf->data + ta->offset + pos;
  
      switch(class_id) {
-@@ -47269,18 +47266,17 @@ static JSValue js_dataview_setValue(JSContext *ctx,
+@@ -49565,7 +49562,7 @@ static JSValue js_dataview_setValue(JSContext *ctx,
  {
      JSTypedArray *ta;
      JSArrayBuffer *abuf;
@@ -40,10 +40,7 @@ index 9606455..c81b450 100644
      uint8_t *ptr;
      uint64_t v64;
      uint32_t v;
--    uint64_t pos;
-+    int64_t pos;
-     JSValueConst val;
- 
+@@ -49575,8 +49572,7 @@ static JSValue js_dataview_setValue(JSContext *ctx,
      ta = JS_GetOpaque2(ctx, this_obj, JS_CLASS_DATAVIEW);
      if (!ta)
          return JS_EXCEPTION;
@@ -53,7 +50,7 @@ index 9606455..c81b450 100644
          return JS_EXCEPTION;
      val = argv[1];
      v = 0; /* avoid warning */
-@@ -47321,8 +47317,6 @@ static JSValue js_dataview_setValue(JSContext *ctx,
+@@ -49617,8 +49613,6 @@ static JSValue js_dataview_setValue(JSContext *ctx,
      abuf = ta->buffer->u.array_buffer;
      if (abuf->detached)
          return JS_ThrowTypeErrorDetachedArrayBuffer(ctx);
