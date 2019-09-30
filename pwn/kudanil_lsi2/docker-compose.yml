@@ -6,6 +6,6 @@ services:
       context: .
     working_dir: /home/ctf
     ports:
-      - "31337:31337" # exposed:local
+      - "17009:31337" # exposed:local
     entrypoint: /etc/run_xinetd.sh
     read_only: true
