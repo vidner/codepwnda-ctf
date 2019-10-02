@@ -1,0 +1,9 @@
+version: '3'
+services:
+  hacktoday:
+    build:
+      context: .
+    ports:
+      - '17032:50050'
+    restart: always
+
