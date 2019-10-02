@@ -17,7 +17,7 @@ app.get('/', function (req, res) {
 	}
 	if(query.includes('require')){
 		res.send('Maap payload anda masuk black list.');
-	}else if(query.length > 20 ){
+	}else if(query.length > 30 ){
 		res.send("payload kepanjangan gan.");
 	}else{
 	  let payload = '<html><head><title>Hello JS</title></head><body>Hello '+ eval('\"'+query+'!\"') +' Welcome to level 3</body></html>' ;
