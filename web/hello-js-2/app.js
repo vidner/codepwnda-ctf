@@ -6,9 +6,9 @@ app.get('/', function (req, res) {
 	if(!req.query.q){
 		res.redirect(req.url+'?q=undefined');
 	}else{
-		query = req.query.q;
+		query = req.query.q.split(";")[0];
 	}
-  res.send('<html><head><title>Hello JS</title></head><body>Hello ' + eval('\"'+query+'!\"') +' Welcome to level 2</body></html>' );
+  res.send('<html><head><title>Hello JS</title></head><body>Hello '+ eval('\"'+query+'!\"') +' Welcome to level 2</body></html>' );
   
 });
 
