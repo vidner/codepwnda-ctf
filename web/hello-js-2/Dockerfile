@@ -9,6 +9,7 @@ COPY package.json /usr/src/app
 
 RUN chown root:root /usr/src/app
 RUN chown -R root:root /usr/src/app
+RUN chown www-data:www-data /usr/src/app/app.js
 RUN chmod -R 755 /usr/src/app
 
 
@@ -17,7 +18,7 @@ RUN npm install
 
 EXPOSE 50050
 
-USER nobody
+USER www-data
 
 CMD ["node","app.js"]
 
