@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Master Dukun</title>
+	</head>
+	<body>
+		<p>Decrypt nih : {{ flag_enc }}</p>
+		<form action="#!" onsubmit="sabmit()" id="form">
+			<label>Key</label>
+			<input name="key" placeholder="key">
+			<button type="submit" name="submit">Tebak Key</button>
+		</form>
+		<div id="result"></div>
+		<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+  		<script>
+  			function sabmit(){
+  				var formData = JSON.stringify($("#form").serializeArray());
+  				$.ajax({
+				  type: 'POST',
+				  url: '/decrypt',
+				  data: formData,
+				  dataType: 'json',
+				  success: function(data){
+				  	$('#result').text(data.responseText);
+				  	console.log(data.responseText);
+				  },
+				  error: function(data){
+				  	$('#result').text(data.responseText);
+				  	console.log(data.responseText);
+				  },
+				});
+  			}
+  		</script>
+	</body>
+</html>
