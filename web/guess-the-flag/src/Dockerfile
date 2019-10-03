@@ -5,4 +5,4 @@ COPY ./index.php /var/www/html/
 COPY ./flag /
 COPY ./your_lovely_flag2_is_here /
 
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["/start.sh"]
