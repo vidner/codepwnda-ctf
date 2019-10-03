@@ -22,7 +22,7 @@ function get_content($url)
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>mpf-php</title>
+  <title>php</title>
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
 </head>
@@ -36,7 +36,7 @@ function get_content($url)
           
           <div class="row">
             <div class="col-8">
-              <h1 class="display-3">mpf?</h1>
+              <h1 class="display-3">php?</h1>
               <p class="lead">Give me a link and I'll visit that for you.</p>
             </div>
           </div>
@@ -77,7 +77,7 @@ echo $content;
     <footer>
       <div class="row">
         <div class="col-12">
-          <p class="text-center font-italic">mpf-php</p>
+          <p class="text-center font-italic">php</p>
           <!-- <p>circleous</p> -->
         </div>
       </div>
