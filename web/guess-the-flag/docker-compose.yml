@@ -6,4 +6,4 @@ services:
     build:
       context: ./src/
     ports:
-      - "17100:80"
+      - "17100:8080"
