@@ -1,16 +1,9 @@
 version: '3'
 
 services:
-  php-fpm:
+  codepwnda:
+    restart: always
     build:
-      context: ./
-      dockerfile: ./php-fpm/Dockerfile
-  nginx:
-    build:
-      context: ./
-      dockerfile: ./nginx/Dockerfile
-    depends_on:
-      - php-fpm
+      context: ./src/
     ports:
-      # port_yang_bisa_diakses_dari_luar:internal_docker
-      - "17100:4000"
+      - "17100:80"
