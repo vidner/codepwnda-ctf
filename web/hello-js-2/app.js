@@ -4,7 +4,7 @@ var app = express();
 app.get('/', function (req, res) {
 	let query;
 	if(!req.query.q){
-		res.redirect(req.url+'?q=undefined');
+		res.redirect(req.headers.host+'/?q=undefined');
 	}else{
 		query = req.query.q.split(";")[0];
 	}
