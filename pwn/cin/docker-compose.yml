@@ -1,0 +1,11 @@
+version: '3'
+services:
+  codepwnda:
+    restart: always
+    build:
+      context: .
+    working_dir: /home/ctf
+    ports:
+      - "17666:31337" # exposed:local
+    entrypoint: /etc/run_xinetd.sh
+    read_only: true
