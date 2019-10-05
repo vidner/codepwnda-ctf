@@ -1,20 +1,28 @@
 <?php
 function get_content($url)
 {
-    $session = curl_init();
+  $urlp = parse_url($url);
+  if (!isset($urlp['host']))
+    return "";
 
-    curl_setopt($session, CURLOPT_URL, $url);
-    curl_setopt($session, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($session, CURLOPT_CONNECTTIMEOUT, 10);
-    curl_setopt($session, CURLOPT_TIMEOUT, 10);
-    curl_setopt($session, CURLOPT_HEADER, false);
-    curl_setopt($session, CURLOPT_USERAGENT, "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36");
+  $dns = dns_get_record($urlp['host']);
+  if (isset($dns["ip"]) && $dns["ip"] === "169.254.169.254")
+    return "";
 
-    $content = curl_exec($session);
+  $session = curl_init();
 
-    curl_close($session);
+  curl_setopt($session, CURLOPT_URL, $url);
+  curl_setopt($session, CURLOPT_RETURNTRANSFER, true);
+  curl_setopt($session, CURLOPT_CONNECTTIMEOUT, 10);
+  curl_setopt($session, CURLOPT_TIMEOUT, 10);
+  curl_setopt($session, CURLOPT_HEADER, false);
+  curl_setopt($session, CURLOPT_USERAGENT, "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36");
 
-    return $content;
+  $content = curl_exec($session);
+
+  curl_close($session);
+
+  return $content;
 }
 ?>
 
