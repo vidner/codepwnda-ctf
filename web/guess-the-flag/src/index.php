@@ -1,14 +1,6 @@
 <?php
 function get_content($url)
 {
-  $urlp = parse_url($url);
-  if (!isset($urlp['host']))
-    return "";
-
-  $dns = dns_get_record($urlp['host'], DNS_A);
-  if (isset($dns["ip"]) && $dns["ip"] === "169.254.169.254")
-    return "";
-
   $session = curl_init();
 
   curl_setopt($session, CURLOPT_URL, $url);
