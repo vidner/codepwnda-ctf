@@ -35,7 +35,7 @@ void interpret(struct vmx *vmx) {
   char current_char;
   size_t loop;
 
-  for (size_t i = 0; vmx->prog[i] && i < 0x250; i++) {
+  for (size_t i = 0; vmx->prog[i] && i < 0xC0; i++) {
     current_char = vmx->prog[i];
     if (current_char == '>') {
       ++ptr;
@@ -72,7 +72,7 @@ void create() {
 
   for (idx = -1; vmx[idx].prog; idx++);
 
-  vmx[idx].prog = malloc(0x250);
+  vmx[idx].prog = malloc(0xC0);
   vmx[idx].data = malloc(0x250);
 
   if (!vmx[idx].prog || !vmx[idx].data) {
@@ -81,7 +81,7 @@ void create() {
   }
 
   printf("bf: ");
-  int n = read(STDIN_FILENO, vmx[idx].prog, 0x250);
+  int n = read(STDIN_FILENO, vmx[idx].prog, 0xC0);
   if (vmx[idx].prog[n - 1] == '\n')
     vmx[idx].prog[n - 1] = '\0';
 }
