@@ -1,9 +1,9 @@
 FROM trafex/alpine-nginx-php7:latest
 
-COPY ./index.php /var/www/html/
+ADD ./index.php /var/www/html/
 
-COPY ./flag /
-COPY ./your_lovely_flag2_is_here /
+ADD ./flag /
+ADD ./your_lovely_flag2_is_here /
 
 EXPOSE 8080
 
